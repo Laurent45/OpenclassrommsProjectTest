@@ -1,0 +1,259 @@
+/* font family */
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('font/roboto-light-webfont.woff2') format('woff2'),
+         url('font/roboto-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* caractéristiques générales */
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'robotolight';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21.33px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    background: #F5F5F5;
+}
+
+/* header top-bar */
+.top_bar {
+    background: #2C3E50;
+    width: 100%;
+    height: 91px;
+}
+
+#header_title {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: initial;
+    color: #FFF;
+    margin: 0;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.header_nav {
+    text-align: center;
+}
+
+.header_nav a {
+    font-size: 1em;
+    margin: 0 8px;
+    padding: 0 5px;
+    text-decoration: none;
+    color: #FFF;
+    opacity: 0.4;
+}
+
+.header_nav a:hover {
+    opacity: 1;
+}
+
+/* sidebar */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 104px;
+    background: #F5F5F5;
+    padding: 18px 27px;
+    font-size: 0.9em;
+}
+
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    opacity: .67;
+    padding: 5px;
+    width: 130px;
+}
+
+.sidebar img {
+    margin-right: 10px;
+}
+
+.sidebar a:hover {
+    font-weight: 700;
+    background: #FFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+#actualite, #message {
+    margin-right: 80px;
+}
+
+/* first post */
+
+.first, .other {
+    width: 90%;
+    margin: auto;
+    background: #FFF;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px #DBDBDB solid;
+    margin-bottom: 20px;
+}
+
+.auteur {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 10px;
+}
+
+.auteur img {
+    border-radius: 200px;
+    margin-right: 15px;
+}
+
+.photo_post {
+    text-align: center;
+    margin: 0;
+}
+
+.pseudo h2 {
+    font-weight: 700;
+    font-size: 1.3em;
+    color: rgba(0,0,0,0.87);
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.pseudo p {
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.description {
+    padding: 10px 10px;
+}
+
+.avis {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    background: #FBFBFB;
+    border-top: 1px solid #DBDBDB;
+    border-radius: 5px;
+    padding: 0 5px;
+    align-items: center;
+}
+
+
+.avis p {
+    float: right;
+    color: #DBDBDB;
+    margin: 0 0 0 5px;
+}
+
+/* footer */
+
+#suggestion_title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.87);
+    border-bottom: 1px #000 solid;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.john {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.john img {
+    float: left;
+    margin-right: 5px;
+}
+
+.detail h1 {
+    font-size: 1.1em;
+    margin: 0;
+    color: #000;
+}
+
+.detail p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.detail a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* media queries */
+
+@media screen and (min-width: 500px) {
+    body {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+    }
+
+    .top_bar {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        height: 51px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-bottom: 10px;
+    }
+
+    #header_title {
+        margin-left: 10px;
+    }
+
+    .sidebar {
+        flex-wrap: nowrap;
+        height: auto;
+        padding-right: 0;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    #actualite, #message {
+        margin-right: 0;
+    } 
+
+    .suggestion {
+        grid-column-start: 2;
+    }
+}
+
+@media screen and (min-width:950px) {
+    body {
+        grid-template-columns: 180px 1fr 300px;
+    }
+
+    .top_bar {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        
+    }
+
+    .suggestion {
+        grid-row: 2;
+        grid-column-start: 3;
+    }
+    
+}
